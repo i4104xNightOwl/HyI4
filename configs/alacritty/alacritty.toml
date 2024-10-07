@@ -86,7 +86,7 @@ key = "Minus"
 mods = "Control"
 
 [window]
-opacity = 1.0
+opacity = 0.8
 
 [window.padding]
 x = 25

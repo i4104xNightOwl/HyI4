@@ -110,6 +110,7 @@ tar -xf ./themes/CatppuccinMocha.tar.gz -C ~/.themes/
 echo "Loading GTK Config..."
 rm -rf ~/.config/gtk-3.0
 cp -r ./themes/gtk-3.0 ~/.config/
+nwg-look -a
 
 cat <<EOF
 Done!

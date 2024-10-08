@@ -77,7 +77,7 @@ cat <<EOF
 
 EOF
 
-# Cấu hình Hyprland
+echo "Installing Hyprland Config..."
 rm -rf ~/.config/hypr
 cp -r ./hypr ~/.config
 
@@ -98,13 +98,18 @@ EOF
 
 # Cài đặt các themes và icons
 mkdir -p ~/.themes ~/.icons
+echo "Unzip Cursor Theme..."
 tar -xf ./themes/Bibata-Modern-Ice.tar.xz -C ~/.icons/
+
+echo "Unzip Icon Theme..."
 tar -xf ./themes/Win10Sur.tar.xz -C ~/.icons/
+
+echo "Unzip Gtk Theme..."
 tar -xf ./themes/CatppuccinMocha.tar.gz -C ~/.themes/
 
-# Cấu hình GTK
+echo "Loading GTK Config..."
 rm -rf ~/.config/gtk-3.0
-cp -r ./icons/gtk-3.0 ~/.config/
+cp -r ./themes/gtk-3.0 ~/.config/
 
 cat <<EOF
 Done!

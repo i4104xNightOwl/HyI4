@@ -50,8 +50,8 @@ EOF
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # Cài đặt các plugin Zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions.git "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # Sao chép file cấu hình Zsh
 if [ -f ~/.zshrc ]; then
@@ -82,7 +82,7 @@ rm -rf ~/.config/hypr
 cp -r ./hypr ~/.config
 
 cat <<EOF
-
+Done!
 
 
 ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗         ████████╗██╗  ██╗███████╗███╗   ███╗███████╗
@@ -107,7 +107,7 @@ rm -rf ~/.config/gtk-3.0
 cp -r ./icons/gtk-3.0 ~/.config/
 
 cat <<EOF
-
+Done!
 
 
 ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗         ██████╗  █████╗  ██████╗██╗  ██╗ █████╗  ██████╗ ███████╗███████╗
@@ -130,7 +130,7 @@ sudo pacman -S --needed blueman networkmanager network-manager-applet pavucontro
 sudo pacman -S --needed typescript npm meson gjs gtk3 gtk-layer-shell gnome-bluetooth-3.0 upower gobject-introspection libdbusmenu-gtk3 libsoup3
 
 cat <<EOF
-
+Done!
 
 
 ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗         ██████╗ ██╗   ██╗███╗   ██╗
@@ -147,11 +147,12 @@ EOF
 curl -fsSL https://bun.sh/install | bash
 sudo ln -s ~/.bun/bin/bun /usr/bin/bun
 
-git clone https://github.com/Jas-SinghFSU/HyprPanel.git && ln -s $(pwd)/HyprPanel $HOME/.config/ags
-cp -rf ./HyprPanel ~/
+rm -rf ~/HyprPanel
+git clone https://github.com/Jas-SinghFSU/HyprPanel.git ~/HyprPanel && ln -s ~/HyprPanel $HOME/.config/ags
 
 # Kích hoạt các dịch vụ cần thiết
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now docker
 sudo systemctl enable --now sddm
 
+reboot

@@ -127,7 +127,8 @@ Done!
 
 EOF
 
-yay -S --noconfirm swaybg nwg-look zenity thunar selectdefaultapplication visual-studio-code-bin cliphist font-manager ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-win10
+yay -S --noconfirm swaybg nwg-look zenity thunar vencord vesktop selectdefaultapplication visual-studio-code-bin cliphist font-manager ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-win10
+yay -S --noconfirm pipewire pipewire-module-xrdp pipewire-full-ffmpeg-git pipewire-screenaudio-git pipewire-session-manager xdg-desktop-portal-hyprland
 yay -S --noconfirm electron wsysmon-git aylurs-gtk-shell github-desktop obs-studio ffmpeg vlc cava tty-clock opera opera-ffmpeg-codes dropbox
 yay -S --noconfirm grimblast-git gpu-screen-recorder hyprpicker matugen-bin python-gpustat grimblast swappy
 sudo pacman -S --needed python ufw rsync docker docker-compose

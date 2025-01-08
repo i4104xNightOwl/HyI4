@@ -17,10 +17,10 @@ rm -rf yay
 yay -Syu --noconfirm
 
 # Cài đặt các gói phần mềm cần thiết
-sudo pacman -S --needed alacritty zsh neovim 
-sudo pacman -S --needed fcitx5-qt fcitx5-im fcitx5-unikey unzip qt6-svg qt6-declarative
-sudo pacman -S --needed hyprland sddm swww unzip tar neofetch
-sudo pacman -R --noconfirm wofi
+sudo pacman -S --needed --noconfirm alacritty zsh neovim 
+sudo pacman -S --needed --noconfirm fcitx5-qt fcitx5-im fcitx5-unikey unzip 
+sudo pacman -S --needed --noconfirm hyprland swww unzip tar fastfetch waybar
+sudo pacman -S --needed --noconfirm sddm qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg qt6-declarative
 
 # Giải nén theme cho sddm
 sudo unzip -o ./configs/sddm/catppuccin-mocha.zip -d /usr/share/sddm/themes/
@@ -70,12 +70,12 @@ sudo pacman -S --needed blueman networkmanager network-manager-applet pavucontro
 sudo pacman -S --needed typescript npm meson gjs gtk3 gtk-layer-shell gnome-bluetooth-3.0 upower gobject-introspection libdbusmenu-gtk3 libsoup3
 
 packages=(
-    swaybg nwg-look zenity thunar vencord vesktop selectdefaultapplication visual-studio-code-bin cliphist rofi
+    swaybg nwg-look zenity nemo vencord vesktop selectdefaultapplication visual-studio-code-bin cliphist rofi
     font-manager ttf-jetbrains-mono ttf-jetbrains-mono-nerd
     pipewire pipewire-module-xrdp pipewire-screenaudio-git pipewire-session-manager xdg-desktop-portal-hyprland
-    aylurs-gtk-shell electron obs-studio ffmpeg vlc cava tty-clock opera opera-ffmpeg-codes
+    electron obs-studio ffmpeg vlc cava tty-clock opera opera-ffmpeg-codes
     grimblast-git gpu-screen-recorder hyprpicker matugen-bin python-gpustat grimblast swappy btop peazip
-    github-desktop gnome-keyring
+    github-desktop gnome-keyring cmus nwg-shell nwg-dock-hyprland
 )
 
 install_package() {
@@ -105,25 +105,6 @@ answer=${answer:-y}
 if [[ "$answer" == 'y' || "$answer" == "Y" ]]; then
 	yay -S --noconfirm ttf-win10
 fi	
-
-
-echo '
-
-
-██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗         ██████╗ ██╗   ██╗███╗   ██╗
-██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║         ██╔══██╗██║   ██║████╗  ██║
-██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║         ██████╔╝██║   ██║██╔██╗ ██║
-██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║         ██╔══██╗██║   ██║██║╚██╗██║
-██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗    ██████╔╝╚██████╔╝██║ ╚████║
-╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝
-
-'
-
-curl -fsSL https://bun.sh/install | bash
-sudo ln -s ~/.bun/bin/bun /usr/bin/bun
-
-rm -rf ~/HyprPanel
-git clone https://github.com/Jas-SinghFSU/HyprPanel.git ~/HyprPanel && ln -s ~/HyprPanel $HOME/.config/ags
 
 echo '
 
@@ -163,6 +144,11 @@ cp ./configs/zsh/.zshrc ~/
 cp -r ./configs/alacritty ~/.config
 cp -r ./configs/rofi ~/.config
 cp -r ./configs/nvim ~/.config
+cp -r ./configs/cava ~/.config
+cp -r ./configs/cmus ~/.config
+cp -r ./configs/fastfetch ~/.config
+cp -r ./configs/waybar ~/.config
+cp -r ./configs/nwg-dock-hyprland ~/.config
 
 echo '
 

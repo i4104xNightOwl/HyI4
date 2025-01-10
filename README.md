@@ -44,10 +44,7 @@ To install these dotfiles on your system, follow these steps:
     git clone https://github.com/i4104xNightOwl/HyI4
     ```
 
-    Run the installation script
-
 2. **Run the installation script**
-Navigate to the .dotfiles directory and run the installation script:
 
     ```bash
     cd ~/HyI4

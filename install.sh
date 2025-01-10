@@ -23,7 +23,7 @@ sudo pacman -S --needed --noconfirm hyprland swww unzip tar fastfetch waybar
 sudo pacman -S --needed --noconfirm sddm qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg qt6-declarative
 
 # Giải nén theme cho sddm
-sudo unzip -o ./configs/sddm/catppuccin-mocha.zip -d /usr/share/sddm/themes/
+sudo unzip -o ./themes/sddm/catppuccin-mocha.zip -d /usr/share/sddm/themes/
 
 # Tạo và cấu hình file sddm.conf
 sudo tee /etc/sddm.conf > /dev/null << EOF
@@ -33,23 +33,6 @@ EOF
 
 # Chạy script Grub
 sudo ./grub/install.sh
-
-echo '
-
-
-██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗         ██╗  ██╗██╗   ██╗██████╗ ██████╗ ██╗      █████╗ ███╗   ██╗██████╗ 
-██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║         ██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗██║     ██╔══██╗████╗  ██║██╔══██╗
-██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║         ███████║ ╚████╔╝ ██████╔╝██████╔╝██║     ███████║██╔██╗ ██║██║  ██║
-██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║         ██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══██╗██║     ██╔══██║██║╚██╗██║██║  ██║
-██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗    ██║  ██║   ██║   ██║     ██║  ██║███████╗██║  ██║██║ ╚████║██████╔╝
-╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ 
-
-
-'
-
-echo "Installing Hyprland Config..."
-rm -rf ~/.config/hypr
-cp -r ./hypr ~/.config
 
 echo '
 
@@ -73,7 +56,7 @@ packages=(
     swaybg nwg-look zenity nemo vencord vesktop selectdefaultapplication visual-studio-code-bin cliphist rofi
     font-manager ttf-jetbrains-mono ttf-jetbrains-mono-nerd
     pipewire pipewire-module-xrdp pipewire-screenaudio-git pipewire-session-manager xdg-desktop-portal-hyprland
-    electron obs-studio ffmpeg vlc cava tty-clock opera opera-ffmpeg-codes
+    electron obs-studio ffmpeg vlc cava tty-clock opera opera-ffmpeg-codecs
     grimblast-git gpu-screen-recorder hyprpicker matugen-bin python-gpustat grimblast swappy btop peazip
     github-desktop gnome-keyring cmus nwg-shell nwg-dock-hyprland
 )
@@ -140,15 +123,8 @@ if [ -f ~/.zshrc ]; then
     mv ~/.zshrc ~/.zshrc.backup  # Lưu bản sao cũ nếu có
 fi
 
-cp ./configs/zsh/.zshrc ~/
-cp -r ./configs/alacritty ~/.config
-cp -r ./configs/rofi ~/.config
-cp -r ./configs/nvim ~/.config
-cp -r ./configs/cava ~/.config
-cp -r ./configs/cmus ~/.config
-cp -r ./configs/fastfetch ~/.config
-cp -r ./configs/waybar ~/.config
-cp -r ./configs/nwg-dock-hyprland ~/.config
+cp ./themes/zsh/.zshrc ~/
+cp -r ./.config ~/
 
 echo '
 
@@ -180,5 +156,3 @@ echo "Done!"
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now docker
 sudo systemctl enable --now sddm
-
-reboot

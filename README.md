@@ -55,4 +55,4 @@ Navigate to the .dotfiles directory and run the installation script:
     ```
 
 ## ScreenShot
-![Dotfiles Screenshot](file:screenshot.png)
+![file:screenshot.png](https://github.com/i4104xNightOwl/HyI4/blob/main/screenshot.png?raw=true))

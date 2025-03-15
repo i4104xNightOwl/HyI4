@@ -17,7 +17,7 @@ rm -rf yay
 yay -Syu --noconfirm
 
 # Cài đặt các gói phần mềm cần thiết
-sudo pacman -S --needed --noconfirm alacritty zsh neovim 
+sudo pacman -S --needed --noconfirm kitty zsh neovim 
 sudo pacman -S --needed --noconfirm fcitx5-qt fcitx5-im fcitx5-unikey unzip 
 sudo pacman -S --needed --noconfirm hyprland swww unzip tar fastfetch waybar
 sudo pacman -S --needed --noconfirm sddm qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg qt6-declarative
@@ -58,7 +58,7 @@ packages=(
     pipewire pipewire-module-xrdp pipewire-screenaudio-git pipewire-session-manager xdg-desktop-portal-hyprland
     electron obs-studio ffmpeg vlc cava tty-clock opera opera-ffmpeg-codecs
     grimblast-git gpu-screen-recorder hyprpicker matugen-bin python-gpustat grimblast swappy btop peazip
-    github-desktop gnome-keyring cmus nwg-shell nwg-dock-hyprland
+    github-desktop gnome-keyring cmus nwg-shell flatpak
 )
 
 install_package() {

@@ -47,7 +47,7 @@ echo '
 
 '
 
-sudo pacman -S --needed python ufw rsync docker docker-compose
+sudo pacman -S --needed python rsync docker docker-compose
 sudo pacman -S --needed libgtop bluez bluez-utils networkmanager dart-sass wl-clipboard brightnessctl gnome-bluetooth-3.0 pacman-contrib power-profiles-daemon
 sudo pacman -S --needed blueman networkmanager network-manager-applet pavucontrol brightnessctl
 sudo pacman -S --needed typescript npm meson gjs gtk3 gtk-layer-shell gnome-bluetooth-3.0 upower gobject-introspection libdbusmenu-gtk3 libsoup3
